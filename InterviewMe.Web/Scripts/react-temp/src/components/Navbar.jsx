@@ -9,8 +9,8 @@ class Navi extends Component {
         return (
             <div>
                 <div className="custom-nav row">
-                    <Link className="nav-logo" to='/home'><img className="logo" src={Logo} alt="logo" /></Link>
-                    <Link className="nav-home" to='/home'> HOME </Link>
+                    <Link className='nav-logo' to='/'><img src={Logo} className='logo' alt='' /></Link>
+                    <Link className="nav-home" to='/'> HOME </Link>
                     <Link className="nav-quiz" to='/quiz'> QUIZ </Link>
                     <Link className="nav-audio" to='/audioquiz'> AUDIO </Link>
                     <Link className="nav-meetup" to='/meetups'> AUDIO </Link>
