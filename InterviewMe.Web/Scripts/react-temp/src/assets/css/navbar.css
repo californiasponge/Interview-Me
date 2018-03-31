@@ -1,10 +1,16 @@
 a {
     text-decoration: none;
 }
-a:link, a:focus, a:visited, a:active {
+
+a:link,
+a:focus,
+a:visited,
+a:active {
     text-decoration: none;
 }
-.custom-nav a, .log-out {
+
+.custom-nav a,
+.log-out {
     display: inline-block;
     font-weight: 700;
     font-size: 24px;
@@ -12,15 +18,29 @@ a:link, a:focus, a:visited, a:active {
     letter-spacing: -1px;
     justify-content: center;
 }
+
 .logo {
     width: 150px;
     height: 150px;
 }
+
 .custom-nav a div:hover {
     color: #E4193A;
     transition: color .2s;
 }
+
 .activeTab div {
     color: #E4193A;
     transition: color .2s;
+}
+
+
+
+@media (max-width: 992px) {
+    .h-md-100 {
+        min-height: 100%;
+    }
+    .nav-link.active {
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
 }
