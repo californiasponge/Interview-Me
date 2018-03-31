@@ -1,3 +1,17 @@
+.ready {
+    margin-top: -100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: red;
+}
+.ready img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
+
 .match-stats {
     width: 400px;
     margin: 40px auto;
