@@ -7,6 +7,18 @@
             "type": "gulp",
             "task": "watch",
             "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "start",
+            "path": "Scripts/react-temp/",
+            "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "all",
+            "path": "Scripts/react-temp/",
+            "problemMatcher": []
         }
     ]
 }
