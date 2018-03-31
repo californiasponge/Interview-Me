@@ -1,6 +1,7 @@
 ﻿using InterviewMe.Data;
 using InterviewMe.Data.Providers;
 using InterviewMe.Models.Domain;
+using InterviewMe.Models.Requests;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -65,6 +66,52 @@ namespace InterviewMe.Services
                 });
             return audio;
 
+        }
+
+        public int Create(AudioRequest req)
+        {
+            int id = 0; 
+            dataProvider.ExecuteNonQuery(
+                "Audio_insert",
+                delegate(SqlParameterCollection parameter)
+                {
+                    parameter.AddWithValue("@url", req.Url);
+                    parameter.AddWithValue("@audio_question_id", req.AudioQuestionId);
+                    parameter.AddWithValue("@rating", req.Rating);
+                    parameter.AddWithValue("@total_ratings", req.TotalRatings);
+                    SqlParameter newId = new SqlParameter("@id", SqlDbType.Int);
+                    newId.Direction = ParameterDirection.Output;
+                    parameter.Add(newId);
+                }, returnParameters: delegate (SqlParameterCollection param)
+                {
+                    id = (int)param["@id"].Value;
+                }
+                );
+            return id;
+        }
+
+        public void Update(AudioUpdateRequest req)
+        {
+            dataProvider.ExecuteNonQuery(
+                "Audio_update",
+                delegate (SqlParameterCollection parameter)
+                {
+                    parameter.AddWithValue("@id", req.Id);
+                    parameter.AddWithValue("@url", req.Url);
+                    parameter.AddWithValue("@audio_question_id", req.AudioQuestionId);
+                    parameter.AddWithValue("@rating", req.Rating);
+                    parameter.AddWithValue("@total_ratings", req.TotalRatings);
+                });
+        }
+
+        public void Delete(int id)
+        {
+            dataProvider.ExecuteNonQuery(
+                "Audio_delete",
+                delegate (SqlParameterCollection parameter)
+                {
+                    parameter.AddWithValue("@id", id);
+                });
         }
     }
 }
