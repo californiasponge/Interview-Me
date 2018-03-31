@@ -235,10 +235,13 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Api\Tests\TestAuthController.cs" />
+    <Compile Include="Controllers\AudioController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JsBuilderController.cs" />
     <Compile Include="Controllers\InterviewMeController.cs" />
+    <Compile Include="Controllers\QuizzesController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Extensions\DictionaryExt.cs" />
     <Compile Include="Extensions\EnumExt.cs" />
     <Compile Include="Extensions\HtmlHelperExt.cs" />

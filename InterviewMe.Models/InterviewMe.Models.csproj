@@ -47,9 +47,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\UploadCompletedModel.cs" />
+    <Compile Include="Domain\Audio.cs" />
+    <Compile Include="Domain\Quiz.cs" />
+    <Compile Include="Requests\AudioRequest.cs" />
+    <Compile Include="Requests\AudioUpdateRequest.cs" />
+    <Compile Include="Requests\QuestionRequest.cs" />
+    <Compile Include="Requests\QuizRequest.cs" />
+    <Compile Include="Domain\User.cs" />
     <Compile Include="Domain\UserBase.cs" />
     <Compile Include="Interfaces\IUserAuthData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Requests\QuizUpdateRequest.cs" />
+    <Compile Include="Requests\UserRequest.cs" />
+    <Compile Include="Requests\UserUpdateRequest.cs" />
     <Compile Include="Responses\BaseResponse.cs" />
     <Compile Include="Responses\ErrorResponse.cs" />
     <Compile Include="Responses\ItemResponse.cs" />
@@ -60,9 +70,7 @@
     <Compile Include="ViewModels\JsViewModel.cs" />
     <Compile Include="ViewModels\InterviewMeViewModel.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Requests\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
