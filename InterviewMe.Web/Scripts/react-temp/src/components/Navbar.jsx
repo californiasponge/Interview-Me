@@ -1,27 +1,52 @@
-import React, {Component} from 'react';
-import '../css/navbar.css'
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import '../assets/css/main.css';
+import '../assets/css/navbar.css';
+import Logo from '../assets/img/InterviewMe-Logo-red.png';
 
 class Navi extends Component {
+    state = {
+        activeTab: 0,
+        display: ''
+    }
+    tabClick = (index) => {
+        this.setState({ activeTab: index });
+        const tabs = ['.nav-home', '.nav-quiz', '.nav-audio', '.nav-meetup', '.nav-contact'];
+        document.querySelector(tabs[index]).scrollIntoView({
+            behavior: 'smooth'
+        });
+    };
 
-    render(){
+    removeNav = () => {
+        console.log('working')
+        this.setState({ display: 'none' });
+    }
+
+    render() {
         return (
-            <div>
-                  <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                    <Link className="logo" to="/home"> InterviewMe</Link>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="custom-toggler navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                        <div className="navbarNav">                       
-                            <Link className="nav-item navlinks" to='/home'> HOME </Link>
-                            <Link className="nav-item navlinks" to='/quiz'> QUIZ </Link>
-                            <Link className="nav-item navlinks" to='/audioquiz'> AUDIO </Link>  
-                            <Link className="nav-item navlinks" to='/home'> LOGOUT </Link>                      
+            <React.Fragment>
+                <div style={{ display: this.state.display }}>
+                    <div className="d-flex justify-content-between">
+                        <div className='col-lg-3'>
+                            <Link className='nav-logo' to='/home'><img src={Logo} className='logo' alt='' /></Link>
+                        </div>
+                        <div className='custom-nav col-lg-7'>
+                            <Link to='/home' className={this.state.activeTab === 0 ? 'activeTab' : ''} onClick={() => this.tabClick(0)}><div className="nav-home col">HOME</div> </Link>
+
+                            <Link to='/quiz' className={this.state.activeTab === 1 ? 'activeTab' : ''} onClick={() => this.tabClick(1)}><div className="nav-quiz col" >QUIZ</div></Link>
+
+                            <Link to='/audio' className={this.state.activeTab === 2 ? 'activeTab' : ''} onClick={() => this.tabClick(2)}><div className="nav-audio col" to='/audio'>AUDIO</div></Link>
+
+                            <Link to='/meetups' className={this.state.activeTab === 3 ? 'activeTab' : ''} onClick={() => this.tabClick(3)}><div className="nav-meetup  col" >MEETUPS</div></Link>
+
+                            <Link to='/contact' className={this.state.activeTab === 4 ? 'activeTab' : ''} onClick={() => this.tabClick(4)}><div className="nav-contact col" >CONTACT</div></Link>
+                        </div>
+                        <div className='col-lg-2 log-out'>
+                            <Link to='/login' onClick={() => this.removeNav()}><div className="nav-logout col" >LOGOUT</div></Link>
                         </div>
                     </div>
-                </nav>
-            </div>
+                </div>
+            </React.Fragment >
         )
     }
 }

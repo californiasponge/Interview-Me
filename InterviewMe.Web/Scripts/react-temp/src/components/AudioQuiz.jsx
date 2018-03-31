@@ -1,15 +1,13 @@
-import React, {Component} from 'react';
-import Navi from './Navbar';
-import '../css/audio.css'
+import React, { Component } from 'react';
+import '../assets/css/main.css';
+import '../assets/css/audio.css';
 
 class AudioQuiz extends Component {
 
     render() {
         return (
             <div>
-                <Navi/>
-                Audio Quiz
-                
+                Audio Quizz
             </div>
         )
     }
