@@ -8,7 +8,7 @@ class Navi extends Component {
         return (
             <div>
                   <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                    <Link className="logo" to="/home"> Interview Me</Link>
+                    <Link className="logo" to="/home"> InterviewMe</Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="custom-toggler navbar-toggler-icon"></span>
                     </button>
@@ -16,7 +16,8 @@ class Navi extends Component {
                         <div className="navbarNav">                       
                             <Link className="nav-item navlinks" to='/home'> HOME </Link>
                             <Link className="nav-item navlinks" to='/quiz'> QUIZ </Link>
-                            <Link className="nav-item navlinks" to='/audioquiz'> AUDIO </Link>                        
+                            <Link className="nav-item navlinks" to='/audioquiz'> AUDIO </Link>  
+                            <Link className="nav-item navlinks" to='/home'> LOGOUT </Link>                      
                         </div>
                     </div>
                 </nav>

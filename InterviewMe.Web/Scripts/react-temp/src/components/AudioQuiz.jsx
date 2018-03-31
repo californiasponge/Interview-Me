@@ -4,10 +4,12 @@ import '../css/audio.css'
 
 class AudioQuiz extends Component {
 
-    render(){
+    render() {
         return (
             <div>
+                <Navi/>
                 Audio Quiz
+                
             </div>
         )
     }
