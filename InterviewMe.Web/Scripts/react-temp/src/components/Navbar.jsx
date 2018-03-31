@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/css/main.css';
 import '../assets/css/navbar.css';
-import Logo from '../assets/img/InterviewMe-Logo-red.png';
-import Ionicon from 'react-ionicons';
+import Logo from '../assets/img/InterviewMe-Logo.png';
 
 class Navi extends Component {
     state = {
@@ -26,7 +25,7 @@ class Navi extends Component {
     render() {
         return (
             <React.Fragment>
-                <div style={{ display: this.state.display }}>                
+                <div style={{ display: this.state.display }}>
                     <nav className='navbar-primary'>
                         <div className="d-flex justify-content-between">
                             <div className='col-lg-3'>
@@ -44,12 +43,12 @@ class Navi extends Component {
                                 <Link to='/contact' className={this.state.activeTab === 4 ? 'activeTab' : ''} onClick={() => this.tabClick(4)}><div className="nav-contact col" >CONTACT</div></Link>
 
                                 <Link to='/login' onClick={() => this.removeNav()}><div className="nav-logout col" >LOGOUT</div></Link>
-                            </div>                       
+                            </div>
                         </div>
                     </nav>
-                </div> 
+                </div>
 
-{/*                 
+                {/*                 
             <div class="row d-flex flex-lg-column flex-row">
                 <aside className="col-2 col-lg-12 h-md-100 p-0 bg-dark fixed-top">
                     <nav className="navbar navbar-expand navbar-dark bg-dark py-2 px-0 px-lg-2">
