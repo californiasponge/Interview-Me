@@ -1,17 +1,25 @@
+.landing {
+    margin-top: -75px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    'ready';
+}
 .ready {
-    margin-top: -100px;
-    display: flex;
+    grid-area: ready;
     justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    background-color: red;
 }
 .ready img {
     flex-shrink: 0;
-    min-width: 100%;
-    min-height: 100%
 }
-
+.ready-video {
+    grid-area: ready;
+    z-index: -1;
+}
+.active-video {
+    height: 100vh;
+    width: 100vw;
+}
 .match-stats {
     width: 400px;
     margin: 40px auto;
