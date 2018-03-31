@@ -17,10 +17,10 @@ a:link, a:focus, a:visited, a:active {
     height: 150px;
 }
 .custom-nav a div:hover {
-    color: #E4193A;
+    color: #3AAFA9;
     transition: color .2s;
 }
 .activeTab div {
-    color: #E4193A;
+    color: #3AAFA9;
     transition: color .2s;
 }

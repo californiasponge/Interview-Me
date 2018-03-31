@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/css/main.css';
 import '../assets/css/navbar.css';
-import Logo from '../assets/img/InterviewMe-Logo-red.png';
+import Logo from '../assets/img/InterviewMe-Logo.png';
 
 class Navi extends Component {
     state = {
@@ -27,10 +27,10 @@ class Navi extends Component {
             <React.Fragment>
                 <div style={{ display: this.state.display }}>
                     <div className="d-flex justify-content-between">
-                        <div className='col-lg-3'>
+                        <div className='col-lg-2'>
                             <Link className='nav-logo' to='/home'><img src={Logo} className='logo' alt='' /></Link>
                         </div>
-                        <div className='custom-nav col-lg-7'>
+                        <div className='custom-nav col-lg-8'>
                             <Link to='/home' className={this.state.activeTab === 0 ? 'activeTab' : ''} onClick={() => this.tabClick(0)}><div className="nav-home col">HOME</div> </Link>
 
                             <Link to='/quiz' className={this.state.activeTab === 1 ? 'activeTab' : ''} onClick={() => this.tabClick(1)}><div className="nav-quiz col" >QUIZ</div></Link>
