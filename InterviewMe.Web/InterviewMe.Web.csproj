@@ -239,6 +239,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JsBuilderController.cs" />
     <Compile Include="Controllers\InterviewMeController.cs" />
+    <Compile Include="Controllers\QuizzesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Extensions\DictionaryExt.cs" />
     <Compile Include="Extensions\EnumExt.cs" />

@@ -94,7 +94,7 @@ namespace InterviewMe.Services
         public void Update(UserUpdateRequest req)
         {
             dataProvider.ExecuteNonQuery(
-                "Users_insert",
+                "Users_update",
                 delegate (SqlParameterCollection parameter)
                 {
                     parameter.AddWithValue("@id", req.Id);

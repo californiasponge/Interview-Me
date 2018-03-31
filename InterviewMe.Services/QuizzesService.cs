@@ -1,5 +1,8 @@
 ﻿using InterviewMe.Data.Providers;
 using InterviewMe.Models.Domain;
+using InterviewMe.Models.Requests;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -18,6 +21,68 @@ namespace InterviewMe.Services
             this.dataProvider = dataProvider;
         }
 
+        public List<Quiz> GetAll()
+        {
+            List<Quiz> quizzes = null;
+            dataProvider.ExecuteCmd(
+                "Quizzes_getall",
+                null,
+                delegate (IDataReader reader, short resultIndex)
+                {
+                    Quiz quiz = new Quiz();
+                    quiz.Id = reader.GetInt32(0);
+                    quiz.Question = reader.GetString(1);
+                    quiz.Answer = reader.GetString(2);
+                    var json = reader.GetString(3);
+
+                    if (json != null)
+                    {
+                        quiz.Answers =
+                        JArray.Parse(json)
+                        .Select(item => item.Value<string>("answers"))
+                        .ToArray();
+                    }
+
+                    quiz.AnswerType = reader.GetString(5);
+
+                    if (quizzes == null)
+                    {
+                        quizzes = new List<Quiz>();
+                    }
+                    quizzes.Add(quiz);
+                });
+            return quizzes;
+        }
+        public Quiz GetById(int id)
+        {
+            Quiz quiz = new Quiz();
+            dataProvider.ExecuteCmd(
+                "Quizzes_getbyid",
+                delegate(SqlParameterCollection parameter)
+                {
+                    parameter.AddWithValue("@id", id);
+                },
+                delegate (IDataReader reader, short resultIndex)
+                {
+                    
+                    quiz.Id = reader.GetInt32(0);
+                    quiz.Question = reader.GetString(1);
+                    quiz.Answer = reader.GetString(2);
+                    var json = reader.GetString(3);
+
+                    if (json != null)
+                    {
+                        quiz.Answers =
+                        JArray.Parse(json)
+                        .Select(item => item.Value<string>("answers"))
+                        .ToArray();
+                    }
+
+                    quiz.AnswerType = reader.GetString(5);
+                });
+            return quiz;
+        }
+
         public int Create(QuizRequest req)
         {
             int id = 0;
@@ -27,7 +92,7 @@ namespace InterviewMe.Services
                 {
                     parameter.AddWithValue("@question", req.Question);
                     parameter.AddWithValue("@answer", req.Answer);
-                    parameter.AddWithValue("@answers", req.Answers.ToString());
+                    parameter.AddWithValue("@answers", JsonConvert.SerializeObject(req.Answers));
                     parameter.AddWithValue("@subject", req.Subject);
                     parameter.AddWithValue("@answer_type", req.AnswerType);
                     SqlParameter newId = new SqlParameter("@id", SqlDbType.Int);
@@ -39,6 +104,32 @@ namespace InterviewMe.Services
                 }
                 );
             return id;
+        }
+
+        public void Update(QuizUpdateRequest req)
+        {
+            dataProvider.ExecuteNonQuery(
+               "Quizzes_update",
+               delegate (SqlParameterCollection parameter)
+               {
+                   parameter.AddWithValue("@id", req.Id);
+                   parameter.AddWithValue("@question", req.Question);
+                   parameter.AddWithValue("@answer", req.Answer);
+                   parameter.AddWithValue("@answers", JsonConvert.SerializeObject(req.Answers));
+                   parameter.AddWithValue("@subject", req.Subject);
+                   parameter.AddWithValue("@answer_type", req.AnswerType);
+               });
+
+        }
+
+        public void Delete(int id)
+        {
+            dataProvider.ExecuteNonQuery(
+                "Quizzes_delete",
+                delegate (SqlParameterCollection parameter)
+                {
+                    parameter.AddWithValue("@id", id);
+                });
         }
     }
 }

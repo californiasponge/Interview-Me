@@ -30,7 +30,7 @@ namespace InterviewMe.Web.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, response);
         }
 
-        [HttpGet, Route("api/users/{id")]
+        [HttpGet, Route("api/users/{id}")]
         public HttpResponseMessage GetById(int id)
         {
             User user = usersService.GetById(id);
@@ -39,30 +39,30 @@ namespace InterviewMe.Web.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, response);
         }
 
-        [HttpPost, Route("api/users")]
-        public HttpResponseMessage Create(UserRequest req)
-        {
-            if (!ModelState.IsValid)
-            {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-            }
-            ItemResponse<int> response = new ItemResponse<int>();
-            int id = usersService.Create(req);
-            response.Item = id;
-            return Request.CreateResponse(HttpStatusCode.Created, response);
-        }
+        //[HttpPost, Route("api/users")]
+        //public HttpResponseMessage Create(UserRequest req)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+        //    }
+        //    ItemResponse<int> response = new ItemResponse<int>();
+        //    int id = usersService.Create(req);
+        //    response.Item = id;
+        //    return Request.CreateResponse(HttpStatusCode.Created, response);
+        //}
 
-        [HttpPut, Route("api/users/{id}")]
-        public HttpResponseMessage Update(UserUpdateRequest req)
-        {
-            if (!ModelState.IsValid)
-            {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-            }
-            usersService.Update(req);
-            var response = new SuccessResponse();
-            return Request.CreateResponse(HttpStatusCode.Created, response);
-        }
+        //[HttpPut, Route("api/users/{id}")]
+        //public HttpResponseMessage Update(UserUpdateRequest req)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+        //    }
+        //    usersService.Update(req);
+        //    var response = new SuccessResponse();
+        //    return Request.CreateResponse(HttpStatusCode.Created, response);
+        //}
 
 
 
