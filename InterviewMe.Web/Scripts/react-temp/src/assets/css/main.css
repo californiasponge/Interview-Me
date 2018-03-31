@@ -2,9 +2,3 @@
     font-family: 'Work Sans', sans-serif;
     color: black;
 }
-a {
-    text-decoration: none;
-}
-a:link, a:focus, a:visited, a:active {
-    text-decoration: none;
-}

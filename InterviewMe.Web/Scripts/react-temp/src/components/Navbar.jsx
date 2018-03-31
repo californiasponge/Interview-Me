@@ -18,26 +18,35 @@ class Navi extends Component {
     };
 
     removeNav = () => {
+        console.log('working')
         this.setState({ display: 'none' });
     }
 
     render() {
         return (
-            <div className="custom-nav row" style={{ display: this.state.display }}>
-                <Link className='nav-logo col-lg-4' to='/home'><img src={Logo} className='logo' alt='' /></Link>
+            <React.Fragment>
+                <div style={{ display: this.state.display }}>
+                    <div className="d-flex justify-content-between">
+                        <div className='col-lg-3'>
+                            <Link className='nav-logo' to='/home'><img src={Logo} className='logo' alt='' /></Link>
+                        </div>
+                        <div className='custom-nav col-lg-7'>
+                            <Link to='/home' className={this.state.activeTab === 0 ? 'activeTab' : ''} onClick={() => this.tabClick(0)}><div className="nav-home col">HOME</div> </Link>
 
-                <Link to='/home' className={this.state.activeTab === 0 ? 'activeTab' : ''} onClick={() => this.tabClick(0)}><div className="nav-home col-lg-1">HOME</div> </Link>
+                            <Link to='/quiz' className={this.state.activeTab === 1 ? 'activeTab' : ''} onClick={() => this.tabClick(1)}><div className="nav-quiz col" >QUIZ</div></Link>
 
-                <Link to='/quiz' className={this.state.activeTab === 1 ? 'activeTab' : ''} onClick={() => this.tabClick(1)}><div className="nav-quiz col-lg-1" >QUIZ</div></Link>
+                            <Link to='/audio' className={this.state.activeTab === 2 ? 'activeTab' : ''} onClick={() => this.tabClick(2)}><div className="nav-audio col" to='/audio'>AUDIO</div></Link>
 
-                <Link to='/audio' className={this.state.activeTab === 2 ? 'activeTab' : ''} onClick={() => this.tabClick(2)}><div className="nav-audio col-lg-1" to='/audio'>AUDIO</div></Link>
+                            <Link to='/meetups' className={this.state.activeTab === 3 ? 'activeTab' : ''} onClick={() => this.tabClick(3)}><div className="nav-meetup  col" >MEETUPS</div></Link>
 
-                <Link to='/meetups' className={this.state.activeTab === 3 ? 'activeTab' : ''} onClick={() => this.tabClick(3)}><div className="nav-meetup  col-lg-1" >MEET UPS</div></Link>
-
-                <Link to='/contact' className={this.state.activeTab === 4 ? 'activeTab' : ''} onClick={() => this.tabClick(4)}><div className="nav-contact col-lg-1" >CONTACT</div></Link>
-
-                <Link to='/login' className="nav-logout col-xs-3 col-lg-3 push-lg-2" onClick={() => this.removeNav()}><div className="nav-logout col-lg-3" >LOGOUT</div></Link>
-            </div >
+                            <Link to='/contact' className={this.state.activeTab === 4 ? 'activeTab' : ''} onClick={() => this.tabClick(4)}><div className="nav-contact col" >CONTACT</div></Link>
+                        </div>
+                        <div className='col-lg-2 log-out'>
+                            <Link to='/login' onClick={() => this.removeNav()}><div className="nav-logout col" >LOGOUT</div></Link>
+                        </div>
+                    </div>
+                </div>
+            </React.Fragment >
         )
     }
 }

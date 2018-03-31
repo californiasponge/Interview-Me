@@ -1,16 +1,26 @@
-.custom-nav {
+a {
+    text-decoration: none;
+}
+a:link, a:focus, a:visited, a:active {
+    text-decoration: none;
+}
+.custom-nav a, .log-out {
+    display: inline-block;
     font-weight: 700;
     font-size: 24px;
-    text-decoration: none;
+    margin-top: 50px;
+    letter-spacing: -1px;
+    justify-content: center;
 }
 .logo {
     width: 150px;
     height: 150px;
 }
 .custom-nav a div:hover {
-    color: red;
-    text-decoration: none;
+    color: #E4193A;
+    transition: color .2s;
 }
 .activeTab div {
-    color: red !important;
+    color: #E4193A;
+    transition: color .2s;
 }
