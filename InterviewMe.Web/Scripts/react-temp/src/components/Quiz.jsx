@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import Navi from './Navbar';
-import '../css/quiz.css'
+import React, { Component } from 'react';
+import '../assets/css/main.css';
+import '../assets/css/quiz.css'
 
 class Quiz extends Component {
     state = {
@@ -10,8 +10,6 @@ class Quiz extends Component {
     render() {
         return (
             <div>
-                <Navi/>
-
                 <ul className="list-group list-group-flush">
                     <li className="list-group-item">Cras justo odio</li>
                     <li className="list-group-item">Cras justo odio</li>
@@ -22,7 +20,7 @@ class Quiz extends Component {
                 <div className="blog-card spring-fever">
                     <div className="title-content">
                         <h3>SPRING FEVER</h3>
-                        <hr/>
+                        <hr />
                         <div className="intro">Yllamco laboris nisi ut aliquip ex ea commodo.</div>
                     </div>
 

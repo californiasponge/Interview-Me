@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
-import '../css/login.css'
+import React, { Component } from 'react';
+import '../assets/css/main.css';
+import '../assets/css/login.css';
 
 class Login extends Component {
 
-    render(){
+    render() {
         return (
             <div>
-                LETS GET ITTT
             </div>
         )
     }

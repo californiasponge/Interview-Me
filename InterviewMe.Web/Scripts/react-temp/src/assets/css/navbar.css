@@ -1,0 +1,16 @@
+.custom-nav {
+    font-weight: 700;
+    font-size: 24px;
+    text-decoration: none;
+}
+.logo {
+    width: 150px;
+    height: 150px;
+}
+.custom-nav a div:hover {
+    color: red;
+    text-decoration: none;
+}
+.activeTab div {
+    color: red !important;
+}
