@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import '../css/login.css'
 
-class Login extends Compoent {
+class Login extends Component {
 
     render(){
         return (
             <div>
+                LETS GET ITTT
             </div>
         )
     }
