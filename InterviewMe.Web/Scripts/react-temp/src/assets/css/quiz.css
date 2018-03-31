@@ -1,2 +1,5 @@
-.list-group-flush .list-group-item {
-  color: green; }
+.actions{
+  width: 200px;
+  height: 100px;
+  margin: auto;
+}

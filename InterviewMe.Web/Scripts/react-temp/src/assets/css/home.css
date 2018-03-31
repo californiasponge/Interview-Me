@@ -1,5 +1,5 @@
 .landing {
-    margin-top: -75px;
+    /* margin-top: -75px; */
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas: 
@@ -14,14 +14,17 @@
     height: 100vh;
     width: 100vw;
 }
-.ready-video {
+
+.ready-video{
     grid-area: ready;
-    z-index: -1;
-}
+    z-index: -1; 
+}  
+
 .active-video {
     height: 100vh;
     width: 100vw;
 }
+
 .match-stats {
     width: 400px;
     margin: 40px auto;
@@ -40,3 +43,31 @@
 .rankings{
     text-align: center;
 }
+
+/* parallax */
+.section {
+  text-align: center;
+  padding: 70px;
+  width: fill;
+}
+
+.card{
+    margin: 40px;
+    box-shadow: 0 0.3125rem 1rem 0 rgba(0,0,0,0.24);
+    height: 250px;
+}
+
+.sectionName{
+    margin: -15px;
+}
+
+.section-light {
+  background-color: #fff;
+}
+
+.section-dark {
+  background-color: #f0f0f0;
+}
+
+
+
