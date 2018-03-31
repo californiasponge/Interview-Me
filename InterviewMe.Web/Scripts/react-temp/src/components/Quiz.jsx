@@ -3,11 +3,23 @@ import Navi from './Navbar';
 import '../css/quiz.css'
 
 class Quiz extends Component {
+    state = {
+        questions: []
+    }
 
-    render(){
+    render() {
         return (
             <div>
-                Quiz
+                <Navi/>
+
+                <ul className="list-group list-group-flush">
+                    <li className="list-group-item">Cras justo odio</li>
+                    <li className="list-group-item">Cras justo odio</li>
+                    <li className="list-group-item">Cras justo odio</li>
+                    <li className="list-group-item">Cras justo odio</li>
+                </ul>
+            
+
             </div>
         )
     }

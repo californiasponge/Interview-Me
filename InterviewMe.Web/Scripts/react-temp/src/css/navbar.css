@@ -1,0 +1,35 @@
+.navbar {
+    min-height: 55px;
+}
+
+.navbarNav {
+    font-size: 14px;
+}
+
+.logo:visited,
+.logo:active,
+.logo:link,
+.logo:focus {
+    color: #9d9d9d;
+    text-decoration: none;
+    margin-left: 40px;
+    font-size: 20px;
+}
+
+.logo:hover {
+    color: #d3aeb3;
+}
+
+.navlinks:visited,
+.navlinks:active,
+.navlinks:link,
+.navlinks:focus {
+    color: #9d9d9d;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 15px;
+}
+
+.navlinks:hover {
+    color: #d3aeb3;
+}

@@ -1,0 +1,18 @@
+.match-stats {
+    width: 400px;
+    margin: 40px auto;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16);	 
+}
+
+.card-title{
+    margin: 15px auto;
+    text-align: center;
+}
+
+.headings{
+    text-align: center;
+}
+
+.rankings{
+    text-align: center;
+}
