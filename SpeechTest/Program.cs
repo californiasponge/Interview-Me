@@ -1,30 +1,59 @@
-﻿using Google.Cloud.Speech.V1;
-using System;
+﻿using System;
+using System.Threading.Tasks;
 
-namespace SpeechTest
+using Google.Apis.Discovery;
+using Google.Apis.Discovery.v1.Data;
+using Google.Apis.Services;
+
+namespace Discovery.ListAPIs
 {
-    public class QuickStart
+    /// <summary>
+    /// This example uses the discovery API to list all APIs in the discovery repository.
+    /// https://developers.google.com/discovery/v1/using.
+    /// <summary>
+    class Program
     {
-        public object AsyncRecognizeGcs(string storageUri)
+        [STAThread]
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Discovery API Sample");
+            Console.WriteLine("====================");
+            try
             {
-                var speech = SpeechClient.Create();
-                var longOperation = speech.LongRunningRecognize(new RecognitionConfig()
-                {
-                    Encoding = RecognitionConfig.Types.AudioEncoding.Linear16,
-                    SampleRateHertz = 16000,
-                    LanguageCode = "en",
-                }, RecognitionAudio.FromStorageUri(storageUri));
-                longOperation = longOperation.PollUntilCompleted();
-                var response = longOperation.Result;
-                foreach (var result in response.Results)
-                {
-                    foreach (var alternative in result.Alternatives)
-                    {
-                        Console.WriteLine($"Transcript: { alternative.Transcript}");
-                    }
-                }
-                return 0;
+                new Program().Run().Wait();
             }
-        
+            catch (AggregateException ex)
+            {
+                foreach (var e in ex.InnerExceptions)
+                {
+                    Console.WriteLine("ERROR: " + e.Message);
+                }
+            }
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+        }
+
+        private async Task Run()
+        {
+            // Create the service.
+            var service = new DiscoveryService(new BaseClientService.Initializer
+            {
+                ApplicationName = "Discovery Sample",
+                ApiKey = "[YOUR_API_KEY_HERE]",
+            });
+
+            // Run the request.
+            Console.WriteLine("Executing a list request...");
+            var result = await service.Apis.List().ExecuteAsync();
+
+            // Display the results.
+            if (result.Items != null)
+            {
+                foreach (DirectoryList.ItemsData api in result.Items)
+                {
+                    Console.WriteLine(api.Id + " - " + api.Title);
+                }
+            }
+        }
     }
 }
