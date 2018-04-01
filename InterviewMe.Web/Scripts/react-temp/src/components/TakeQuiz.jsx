@@ -62,12 +62,12 @@ class TakeQuiz extends Component {
     }
     answeredQuestion = (answer) => {
         let el = document.querySelector('#transition-card');
-        TweenMax.to(el, .5, { x: -window.innerWidth });
+        TweenMax.to(el, .5, { x: window.innerWidth });
         setTimeout(() => { this.bringNewCard(); }, 2000);
     }
     bringNewCard = () => {
         let el = document.querySelector('#transition-card');
-        TweenMax.to(el, .7, { x: -window.innerWidth * 2, xPercent: -50 });
+        TweenMax.to(el, .7, { x: window.innerWidth / 2, xPercent: -50 });
     }
 
     render() {
