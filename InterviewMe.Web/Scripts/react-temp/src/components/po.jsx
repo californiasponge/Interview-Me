@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import '../assets/css/po.css';
+import '../assets/css/main.css';
 import Ionicon from 'react-ionicons';
+import Am from '../assets/img/am.jpg';
+import Kl from '../assets/img/kl.jpg';
+import Ak from '../assets/img/ak.jpg';
 
 class Po extends Component {
     render() {
@@ -8,96 +12,113 @@ class Po extends Component {
             <div className='po'>
                 <div className='row'>
 
-                    <div class="card">
-                        <div class="card-image">
-                            <img
-                                src="http://www.loveo.cc/wp-content/uploads/2017/02/card-image.jpg"
-                                alt="Orange"/>
+                    <div className="card">
+                        <div className="card-image">
+                            <img src={Am}/>  
                         </div>
-                        <div class="card-body">
-                            <div class="card-title">
+                        <div className="card-body">
+                            <div className="card-title">
                                 <h3>
-                                    Andrew Kim
+                                    Arian Motavasseli
                                 </h3>
                             </div>
-                            <div class="card-exceprt">
-                                <p>Email:
+                            <div className="card-exceprt">
+                                <Ionicon icon="ios-mail-outline" fontSize="35px" color="#C9C9C9"/>
+                                <p>
+                                    amotavasseli@gmail.com
                                 </p>
-                                <p>Phone:
+                                <Ionicon icon="ios-call-outline" fontSize="35px" color="#C9C9C9"/>
+                                <p>
+                                    (310)-591-6601
                                 </p>
-                                <p>Linkedin:
+                                <Ionicon icon="logo-linkedin" fontSize="35px" color="#C9C9C9"/>
+                                <p>
+                                    <span classNameName='linked'> linkedin.com/in/arianmotavasseli </span>
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-image">
-                            <img
-                                src="http://www.loveo.cc/wp-content/uploads/2017/02/card-image.jpg"
-                                alt="Orange"/>
+                    <div className="card">
+                        <div className="card-image">
+                            <img src={Ak}/>
                         </div>
-                        <div class="card-body">
-                            <div class="card-title">
+                        <div className="card-body">
+                            <div className="card-title">
                                 <h3>
-                                    Andrew Kim
+                                    Andrew
+                                    <br/>
+                                    Kim
                                 </h3>
                             </div>
-                            <div class="card-exceprt">
-                                <p>Email:
+                            <div className="card-exceprt">
+                                <Ionicon icon="ios-mail-outline" fontSize="35px" color="#C9C9C9"/>
+                                <p>
+                                    andrewkyukim89@gmail.com
                                 </p>
-                                <p>Phone:
+                                <Ionicon icon="ios-call-outline" fontSize="35px" color="#C9C9C9"/>
+                                <p>
+                                    (404)-333-1941
                                 </p>
-                                <p>Linkedin:
+                                <Ionicon icon="logo-linkedin" fontSize="35px" color="#C9C9C9"/>
+                                <p>
+                                    linkedin.com/in/andrewkyukim
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-image">
-                            <img
-                                src="http://www.loveo.cc/wp-content/uploads/2017/02/card-image.jpg"
-                                alt="Orange"/>
+                    <div className="card">
+                        <div className="card-image">
+                            <img src={Kl} />
                         </div>
-                        <div class="card-body">
+                        <div className="card-body">
                             <div class="card-title">
                                 <h3>
-                                    Andrew Kim
+                                    Karre 
+                                    <br/>
+                                    Lawson
                                 </h3>
                             </div>
                             <div class="card-exceprt">
+                                <Ionicon icon="ios-mail-outline" fontSize="35px" color="#C9C9C9"/>
                                 <p>
-                                    <Ionicon icon="ios-mail-outline" fontSize="35px" color="#C9C9C9"/>
+                                    karrelawson@gmail.com
                                 </p>
+                                <Ionicon icon="ios-call-outline" fontSize="35px" color="#C9C9C9"/>
                                 <p>
-                                    <Ionicon icon="ios-call-outline" fontSize="35px" color="#C9C9C9"/>
+                                    (240)-249-7172
                                 </p>
+                                <Ionicon icon="logo-linkedin" fontSize="35px" color="#C9C9C9"/>
                                 <p>
-                                    <Ionicon icon="logo-linkedin" fontSize="35px" color="#C9C9C9"/> 
+                                    linkedin.com/in/karrelawson
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-image">
-                            <img
-                                src="http://www.loveo.cc/wp-content/uploads/2017/02/card-image.jpg"
-                                alt="Orange"/>
+                    <div className="card">
+                        <div className="card-image">
+                            <img src="http://www.loveo.cc/wp-content/uploads/2017/02/card-image.jpg"/>
                         </div>
-                        <div class="card-body">
-                            <div class="card-title">
+                        <div className="card-body">
+                            <div className="card-title">
                                 <h3>
-                                    Andrew Kim
+                                    Lawrence Tucker
                                 </h3>
                             </div>
-                            <div class="card-exceprt">
-                                <p>Email:
+                            <div className="card-exceprt">
+                                <Ionicon icon="ios-mail-outline" fontSize="35px" color="#C9C9C9"/>
+                                <p>
+                                    ltimin@gmail.com
                                 </p>
-                                <p>Phone:
+                                <Ionicon icon="ios-call-outline" fontSize="35px" color="#C9C9C9"/>
+                                <p>
+                                    (202)-200-0007
                                 </p>
-                                <p>Linkedin:
+                                <Ionicon icon="logo-linkedin" fontSize="35px" color="#C9C9C9"/>
+                                <p>
+                                    <span classNameName='linked'> linkedin.com/in/lawrencetucker </span>
                                 </p>
                             </div>
                         </div>

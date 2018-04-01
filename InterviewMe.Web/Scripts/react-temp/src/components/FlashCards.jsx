@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-//import Ionicon from 'react-ionicons';
+import React, {Component} from 'react';
 import '../assets/css/flashcards.css';
 import * as fcservices from '../services/fcservices';
 

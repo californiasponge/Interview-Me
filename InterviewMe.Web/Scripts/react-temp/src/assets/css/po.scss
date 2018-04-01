@@ -1,17 +1,12 @@
 .po {
     @import url("https://fonts.googleapis.com/css?family=Playfair+Display");
-    @import url("https://fonts.googleapis.com/css?family=Playfair+Display|Source+Sans+Pro");
 
     .card {
         height: auto;
-        width: 250px;
-        margin: 30px auto;
+        width: 285px;
+        margin: 55px auto;
         background-color: white;
         box-shadow: 0px 5px 20px #555;
-    }
-    .card a {
-        color: #333;
-        text-decoration: none;
     }
     .card:hover .card-image img {
         width: 110%;
@@ -37,13 +32,7 @@
         padding: 15px 20px;
         box-sizing: border-box;
     }
-    .card-date {
-        font-family: 'Source Sans Pro', sans-serif;
-    }
-    .card-title,
-    .card-exceprt {
-        font-family: 'Playfair Display', serif;
-    }
+     
     .card-date,
     .card-title {
         text-align: center;
@@ -56,15 +45,8 @@
     #case-title {
         color: #777;
     }
-    #case-title {
-        position: absolute;
-        font: 18px 'Microsoft YaHei';
-        top: 10px;
-        left: 0px;
-        right: 0px;
-        margin: auto;
-        display: block;
-        text-align: center;
-        text-decoration: none;
+    
+    .linked{
+        font-size: 14px;
     }
 }
