@@ -42,6 +42,16 @@ namespace InterviewMe.Web.Controllers
 
             return Request.CreateResponse(HttpStatusCode.OK, response);
         }
+        [HttpGet, Route("api/quizzes/{subject}")]
+        public HttpResponseMessage GetBySubject(string subject)
+        {
+            List<Quiz> quizzes = qService.GetBySubject(subject);
+
+            ItemsResponse<Quiz> response = new ItemsResponse<Quiz>();
+            response.Items = quizzes;
+
+            return Request.CreateResponse(HttpStatusCode.OK, response);
+        }
 
         [HttpPost, Route("api/quizzes")]
         public HttpResponseMessage Create(QuizRequest req)

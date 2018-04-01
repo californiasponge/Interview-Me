@@ -45,6 +45,42 @@ namespace InterviewMe.Services
                 });
             return quizzes;
         }
+        public List <Quiz> GetBySubject(string subject)
+        {
+            List<Quiz> quizzes = null ;
+            dataProvider.ExecuteCmd(
+                "Quizzes_getbysubject",
+                delegate (SqlParameterCollection parameter)
+                {
+                    parameter.AddWithValue("@subject", subject);
+                },
+                delegate (IDataReader reader, short resultIndex)
+                {
+                    Quiz quiz = new Quiz();
+                    quiz.Id = reader.GetInt32(0);
+                    quiz.Question = reader.GetString(1);
+                    quiz.Answer = reader.GetString(2);
+                    var json = reader.GetString(3);
+
+                    if (json != null)
+                    {
+                        quiz.Answers =
+                        JArray.Parse(json)
+                        .Select(item => item.Value<string>("answers"))
+                        .ToArray();
+                    }
+
+                    quiz.AnswerType = reader.GetString(5);
+
+                    if (quizzes == null)
+                    {
+                        quizzes = new List<Quiz>();
+                    }
+                    quizzes.Add(quiz);
+                });
+            return quizzes;
+        }
+
         public Quiz GetById(int id)
         {
             Quiz quiz = new Quiz();
@@ -67,6 +103,7 @@ namespace InterviewMe.Services
             return quiz;
         }
 
+       
         public int Create(QuizRequest req)
         {
             int id = 0;
@@ -114,6 +151,11 @@ namespace InterviewMe.Services
                 {
                     parameter.AddWithValue("@id", id);
                 });
+        }
+
+        public List<Quiz> GetBySubject()
+        {
+            throw new NotImplementedException();
         }
     }
 }
