@@ -1,3 +1,6 @@
+.container {
+    padding: 2px;
+}
 .contact-us {
     font-weight: 700;
     font-size: 24px;
@@ -9,10 +12,21 @@
 }
 .icons {
     color: #3AAFA9;
-    font-size: 20px;
+    font-size: 24px;
     height: 50px;
+    text-align: center;
 }
 .icons-rev {
     color:#17252A;
     font-size: 20px;
+}
+.social {
+    margin-top: 24px;
+    text-align: center;
+}
+.map {
+    margin-top: -15px!important;
+}
+hr {
+    margin-top: -10px!important;
 }
