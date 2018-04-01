@@ -22,9 +22,6 @@ namespace InterviewMe.Services
             this.s3 = s3;
         }
 
-        Request
-            HttpContent.
-            Read Header read incoming header from api controller
-        public 
+        
     }
 }
