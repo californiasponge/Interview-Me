@@ -1,5 +1,27 @@
-.quiz-cards {
-    height: 80vh;
-    width: 80vw;
-    background-color: #d99726;
+.forMargins {
+    margin: 5px;
+    padding: 20px;
+}
+.quiz-card {
+    margin-left: -2vw;
+    display: grid;
+    align-self: center;
+    height: 90vh;
+    width: 90vw;
+    background-color: whitesmoke;
+    z-index: 1;
+}
+.quiz-question {
+    align-self: center;
+    text-align: center;
+}
+.quiz-answers {
+    align-self: center;
+    text-align: center;
+}
+#transition-card{
+        -webkit-transition: 0.5s ease-in-out;
+        -moz-transition: 0.5s ease-in-out;
+        -o-transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out;
 }
