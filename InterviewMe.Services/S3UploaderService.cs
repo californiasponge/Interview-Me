@@ -17,7 +17,7 @@ using System.Web;
 
 namespace InterviewMe.Services
 {
-    class S3UploaderService
+    public class S3UploaderService : IS3UploaderService
     {
         readonly IConfiguration config;
         readonly IDataProvider dataProvider;
@@ -63,39 +63,5 @@ namespace InterviewMe.Services
                 Url = fileUrl
             };
         }
-
-        //public void Delete(int id)
-        //{
-        //    string url = null;
-        //    string fileName = null;
-
-        //    dataProvider.ExecuteCmd(
-        //        "Audio_getbyid",
-        //        delegate (SqlParameterCollection parameters)
-        //        {
-        //            parameters.AddWithValue("@id", id);
-        //        },
-        //        delegate (IDataReader reader, short resultSetIndex)
-        //        {
-        //            url = reader.GetString(0);
-        //            fileName = Path.GetFileName(url);
-        //        }
-        //    );
-
-        //    using (AmazonS3Client client = new AmazonS3Client(config.AwsAccessKey, config.AwsSecretKey, Amazon.RegionEndpoint.USEast1))
-        //    {
-        //        DeleteObjectRequest request = new DeleteObjectRequest();
-        //        request.Key = fileName;
-        //        request.BucketName = "sabio-training/C49";
-        //        client.DeleteObject(request);
-        //    }
-
-        //    dataProvider.ExecuteNonQuery(
-        //        "ImageDatabase_delete",
-        //        delegate (SqlParameterCollection parameters)
-        //        {
-        //            parameters.AddWithValue("@id", id);
-        //        });
-       // }
     }
 }

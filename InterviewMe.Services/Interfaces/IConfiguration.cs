@@ -10,5 +10,6 @@ namespace InterviewMe.Services.Interfaces
     {
         string AWSAccessKey { get; }
         string AWSSecretKey { get; }
+        string MicrosoftAPIKey { get; }
     }
 }
