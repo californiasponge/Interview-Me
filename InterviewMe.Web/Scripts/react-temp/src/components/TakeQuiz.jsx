@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 class TakeQuiz extends Component {
     state = {
         viewCard: null,
+        scoreDisabled: false
     }
     results = [];
 
@@ -70,11 +71,13 @@ class TakeQuiz extends Component {
                         correct++;
 
                 }
-                let finalScore = this.results.length / correct;
-
+                let finalScore = {};
+                finalScore.question = "Your Score is!"
+                finalScore.answers = [Math.round((correct / this.results.length * 100)).toString() + "%"];
                 this.setState({
-                    viewCard: null
+                    viewCard: finalScore, scoreDisabled: true
                 });
+
             };
         }, 200)
 
@@ -112,7 +115,7 @@ class TakeQuiz extends Component {
                                     {
                                         this.state.viewCard.answers.map((answer, index) =>
                                             <div className='col-lg-12 quiz-answers' key={index}>
-                                                <h2 onClick={() => this.handleAnswer(this.state.viewCard, answer)} className='tq-answer'>{answer}</h2>
+                                                <h2 disabled={this.state.scoreDisabled} onClick={() => this.handleAnswer(this.state.viewCard, answer)} className='tq-answer'>{answer}</h2>
                                             </div>
                                         )
                                     }

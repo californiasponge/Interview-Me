@@ -48,10 +48,10 @@
     cursor: pointer;
     padding-top: 3em;
     margin-bottom: -10px;
-    transition-duration: 0.3s;
 }
 .tq-answer:hover {
     border-bottom: #3AAFA9 solid 2px;
+    transition-timing-function: ease-in-out;
 }
 .button-quit {
     padding:2em;
