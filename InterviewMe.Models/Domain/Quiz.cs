@@ -11,7 +11,7 @@ namespace InterviewMe.Models.Domain
         public int Id { get; set; }
         public string Question { get; set; }
         public string Answer { get; set; }
-        public string[] Answers { get; set; }
+        public object Answers { get; set; }
         public string Subject { get; set; }
         public string AnswerType { get; set; }
     }
