@@ -49,7 +49,8 @@ class FlashCards extends Component {
                                    {this.state.currentCard.question}                                   
                                 </div>
 
-                                <div className="back" style={{fontSize: '18px'}}>                                              
+                                <div className="back" style={{fontSize: '18px'}}> 
+                                    <h3> {this.state.currentCard.subject} </h3>                                                           
                                    {this.state.currentCard.answer}                                   
                                 </div>                                
                             </div>
