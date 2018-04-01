@@ -26,12 +26,13 @@ class Navi extends Component {
     render() {
         return (
             <React.Fragment>
-                <div style={{ display: this.state.display }}>                
+                {/* <div style={{ display: this.state.display }}>                
                     <nav className='navbar-primary'>
                         <div className="d-flex justify-content-between">
                             <div className='col-lg-3'>
                                 <Link className='nav-logo' to='/home'><img src={Logo} className='logo' alt='' /></Link>
                             </div>
+
                             <div className='custom-nav col-lg-12'>
                                 <Link to='/home' className={this.state.activeTab === 0 ? 'activeTab' : ''} onClick={() => this.tabClick(0)}><div className="nav-home col">HOME</div> </Link>
 
@@ -44,36 +45,40 @@ class Navi extends Component {
                                 <Link to='/contact' className={this.state.activeTab === 4 ? 'activeTab' : ''} onClick={() => this.tabClick(4)}><div className="nav-contact col" >CONTACT</div></Link>
 
                                 <Link to='/login' onClick={() => this.removeNav()}><div className="nav-logout col" >LOGOUT</div></Link>
-                            </div>                       
-                        </div>
-                    </nav>
-                </div> 
+                            </div>    
 
-{/*                 
-            <div class="row d-flex flex-lg-column flex-row">
-                <aside className="col-2 col-lg-12 h-md-100 p-0 bg-dark fixed-top">
-                    <nav className="navbar navbar-expand navbar-dark bg-dark py-2 px-0 px-lg-2">
-                        <div className="collapse navbar-collapse" id="nav">
-                            <ul className="flex-column flex-lg-row navbar-nav w-100 justify-content-center align-items-center align-items-sm-start text-left text-lg-center">  
-                            
-                            <Link className='nav-logo' to='/home'><img src={Logo} className='logo'/></Link>                            
-                                <li className="nav-item w-100">
-                                    <Link to='/quiz' className={this.state.activeTab === 1 ? 'activeTab' : ''} onClick={() => this.tabClick(1)}><div className="nav-quiz col" >QUIZ</div></Link>
-                                </li>                                
-                                <li className="nav-item w-100">
-                                    <Link to='/audio' className={this.state.activeTab === 2 ? 'activeTab' : ''} onClick={() => this.tabClick(2)}><div className="nav-audio col" to='/audio'>AUDIO</div></Link>
-                                </li>
-                                <li className="nav-item w-100">                                   
-                                    <Link to='/meetups' className={this.state.activeTab === 3 ? 'activeTab' : ''} onClick={() => this.tabClick(3)}><div className="nav-meetup  col" >MEETUPS</div></Link>
-                                </li>
-                                <li className="nav-item w-100">
-                                    <Link to='/contact' className={this.state.activeTab === 4 ? 'activeTab' : ''} onClick={() => this.tabClick(4)}><div className="nav-contact col" >CONTACT</div></Link>
-                                </li>                                    
-                            </ul>
                         </div>
                     </nav>
-                </aside>   
-            </div>        */}
+                </div>  */}
+
+
+<nav class="navbar navbar-expand-lg navbar-light">
+<a class="navbar-brand" href="#">Navbar</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav">
+<li class="nav-item active">
+<Link to='/home' className={this.state.activeTab === 0 ? 'activeTab' : ''} onClick={() => this.tabClick(0)}><div className="nav-home col">HOME</div> </Link>
+</li>
+<li class="nav-item">
+<Link to='/quiz' className={this.state.activeTab === 1 ? 'activeTab' : ''} onClick={() => this.tabClick(1)}><div className="nav-quiz col" >QUIZ</div></Link>
+</li>
+<li class="nav-item">
+<Link to='/meetups' className={this.state.activeTab === 3 ? 'activeTab' : ''} onClick={() => this.tabClick(3)}><div className="nav-meetup  col" >MEETUPS</div></Link>
+</li>
+<li class="nav-item">
+<Link to='/contact' className={this.state.activeTab === 4 ? 'activeTab' : ''} onClick={() => this.tabClick(4)}><div className="nav-contact col" >CONTACT</div></Link>
+</li>
+<li class="nav-item">
+<Link to='/login' onClick={() => this.removeNav()}><div className="nav-logout col" >LOGOUT</div></Link>
+</li>
+</ul>
+</div>
+</nav>
+
+
             </React.Fragment >
         )
     }

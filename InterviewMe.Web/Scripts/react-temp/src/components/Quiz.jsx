@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import '../assets/css/main.css';
-import '../assets/css/quiz.css'
-import Ionicon from 'react-ionicons'
+import '../assets/css/quiz.css';
+import Ionicon from 'react-ionicons';
+import $ from 'jquery';
 
 class Quiz extends Component {
     state = {
@@ -10,11 +11,11 @@ class Quiz extends Component {
 
     render() {
         return (
-            <div>
+            <div className='quiz'>
                 <section className="section section-dark">
                     <h2>Lets Get It!</h2>
                     <div className='row'>                   
-                        <div class="actions card col-xs-3">
+                        <div class="slideUp actions card col-xs-3">
                             <div class="card-body">
                                 <div className='icons'>
                                 <Ionicon icon="ios-add-circle-outline" fontSize="35px" color="#4257b2"/>

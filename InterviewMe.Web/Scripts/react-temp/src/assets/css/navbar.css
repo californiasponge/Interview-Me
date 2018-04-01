@@ -34,13 +34,3 @@ a:active {
     transition: color .2s;
 }
 
-
-
-@media (max-width: 992px) {
-    .h-md-100 {
-        min-height: 100%;
-    }
-    .nav-link.active {
-        border-bottom: 1px solid rgba(255,255,255,0.3);
-    }
-}
