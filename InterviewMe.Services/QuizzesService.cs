@@ -33,16 +33,8 @@ namespace InterviewMe.Services
                     quiz.Id = reader.GetInt32(0);
                     quiz.Question = reader.GetString(1);
                     quiz.Answer = reader.GetString(2);
-                    var json = reader.GetString(3);
-
-                    if (json != null)
-                    {
-                        quiz.Answers =
-                        JArray.Parse(json)
-                        .Select(item => item.Value<string>("answers"))
-                        .ToArray();
-                    }
-
+                    quiz.Answers = JsonConvert.DeserializeObject(reader.GetString(3));
+                    quiz.Subject = reader.GetString(4);
                     quiz.AnswerType = reader.GetString(5);
 
                     if (quizzes == null)
@@ -104,16 +96,8 @@ namespace InterviewMe.Services
                     quiz.Id = reader.GetInt32(0);
                     quiz.Question = reader.GetString(1);
                     quiz.Answer = reader.GetString(2);
-                    var json = reader.GetString(3);
-
-                    if (json != null)
-                    {
-                        quiz.Answers =
-                        JArray.Parse(json)
-                        .Select(item => item.Value<string>("answers"))
-                        .ToArray();
-                    }
-
+                    quiz.Answers = JsonConvert.DeserializeObject(reader.GetString(3));
+                    quiz.Subject = reader.GetString(4);
                     quiz.AnswerType = reader.GetString(5);
                 });
             return quiz;
