@@ -43,16 +43,15 @@ class FlashCards extends Component {
                     this.state.currentCard &&
                     <div className='row'>
                         <div className="card">
-                            <div className="content">
-                                <div className="front">
-                                    {/* <p>Questions: </p> */}
-                                    <p>{this.state.currentCard.question}</p>
+                            <div className="content">                                
+                                <div className="front">    
+                                    <h3> {this.state.currentCard.subject} </h3>                                                                                                    
+                                   {this.state.currentCard.question}                                   
                                 </div>
 
-                                <div className="back">
-                                    {/* <p>Answer: </p> */}
-                                    {this.state.currentCard.answer}
-                                </div>
+                                <div className="back" style={{fontSize: '18px'}}>                                              
+                                   {this.state.currentCard.answer}                                   
+                                </div>                                
                             </div>
                         </div>
                         <span><button type="button" className="btn btn-primary" onClick={this.handleLeft}>L</button><button type="button" className="btn btn-primary" onClick={this.handleRight}>R</button></span>

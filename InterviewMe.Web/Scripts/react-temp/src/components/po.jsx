@@ -5,6 +5,7 @@ import Ionicon from 'react-ionicons';
 import Am from '../assets/img/am.jpg';
 import Kl from '../assets/img/kl.jpg';
 import Ak from '../assets/img/ak.jpg';
+import Lt from '../assets/img/LT.jpg';
 
 class Po extends Component {
     render() {
@@ -33,7 +34,7 @@ class Po extends Component {
                                 </p>
                                 <Ionicon icon="logo-linkedin" fontSize="35px" color="#C9C9C9"/>
                                 <p>
-                                    <span classNameName='linked'> linkedin.com/in/arianmotavasseli </span>
+                                    <span className='linked'> linkedin.com/in/arianmotavasseli </span>
                                 </p>
                             </div>
                         </div>
@@ -73,14 +74,14 @@ class Po extends Component {
                             <img src={Kl} />
                         </div>
                         <div className="card-body">
-                            <div class="card-title">
+                            <div className="card-title">
                                 <h3>
                                     Karre 
                                     <br/>
                                     Lawson
                                 </h3>
                             </div>
-                            <div class="card-exceprt">
+                            <div className="card-exceprt">
                                 <Ionicon icon="ios-mail-outline" fontSize="35px" color="#C9C9C9"/>
                                 <p>
                                     karrelawson@gmail.com
@@ -99,7 +100,7 @@ class Po extends Component {
 
                     <div className="card">
                         <div className="card-image">
-                            <img src="http://www.loveo.cc/wp-content/uploads/2017/02/card-image.jpg"/>
+                            <img src={Lt}/>
                         </div>
                         <div className="card-body">
                             <div className="card-title">
@@ -118,7 +119,7 @@ class Po extends Component {
                                 </p>
                                 <Ionicon icon="logo-linkedin" fontSize="35px" color="#C9C9C9"/>
                                 <p>
-                                    <span classNameName='linked'> linkedin.com/in/lawrencetucker </span>
+                                    <span className='linked'> linkedin.com/in/lawrencetucker </span>
                                 </p>
                             </div>
                         </div>
