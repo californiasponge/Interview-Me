@@ -1,56 +1,67 @@
 import React, {Component} from 'react';
-import Ionicon from 'react-ionicons';
 import '../assets/css/flashcards.css';
 import * as fcservices from '../services/fcservices';
 
 class FlashCards extends Component {
     state = {
-        questions: []
+        cards: null,
+        cc: 0
     }
 
-    componentDidMount () {
+    componentWillMount() {
         fcservices
-        .getAll().then(
-            response =>{
-                this.setState({questions: response.data.items})
+            .getAll().then(
+            response => {
+                this.cards = response.data.items;
+                this.setState({ currentCard: this.cards[this.state.cc]});
                 console.log(response.data.items)
             },
-            err =>{
+            err => {
                 console.log('error')
             }
-        )
+            )
+    }
+    handleLeft = () => {
+        this.setState({
+            cc: this.state.cc - 1 < 0 ? this.state.cc : this.state.cc - 1,
+            currentCard: this.cards[this.state.cc]
+        })
+        console.log(this.state.cc);
+    }
+    handleRight = () => {
+        this.setState({
+            cc: this.state.cc + 2 > this.cards ? this.state.cc : this.state.cc + 1,
+            currentCard: this.cards[this.state.cc]
+        })
+        console.log(this.state.cc);
     }
 
     render() {
         return (
             <div className='flashcards'>
-                                
-                {this.state.questions.map((items) =>
-
-                    <div key={items.id}>
-                    {
-                        (items.subject == 'ASP.NET') &&  
-                    <div className='row'>                   
-                    <label>                            
-                        <input type="checkbox"/>
+                {
+                    this.state.currentCard &&
+                    <div className='row'>
                         <div className="card">
-                            <div className="front">
-                                <h3>Question: </h3>
-                                <p>{items.question}</p>
-                            </div>
+                            <div className="content">                                
+                                <div className="front">    
+                                    <h3> {this.state.currentCard.subject} </h3>                                                                                                    
+                                   {this.state.currentCard.question}                                   
+                                </div>
 
-                            <div className="back">
-                                <h3>Answer: </h3>
-                                <p>{items.answer}</p>
+                                <div className="back" style={{fontSize: '18px'}}>                                              
+                                   {this.state.currentCard.answer}                                   
+                                </div>                                
                             </div>
-                        </div>                            
-                    </label> 
-                    </div>                      
-                    }
+                        </div>
+                        <span><button type="button" className="btn btn-primary" onClick={this.handleLeft}>L</button><button type="button" className="btn btn-primary" onClick={this.handleRight}>R</button></span>
                     </div>
-                )}
-                                    
-            </div>   
+
+                }
+
+             
+
+            </div>
         )
     }
 }
