@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import '../assets/css/main.css';
 import '../assets/css/navbar.css';
 import Logo from '../assets/img/InterviewMe-Logo.png';
-import Ionicon from 'react-ionicons';
 
 class Navi extends Component {
 
@@ -11,7 +10,7 @@ class Navi extends Component {
         return (
             <React.Fragment>
                 <nav className="navbar navbar-expand-lg navbar-light">
-                    <Link className='logo' to='/home'> <img src={Logo} className='logo' /> </Link>
+                    <Link className='logo' to='/home'> <img src={Logo} className='logo' alt='' /> </Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="custom-toggler navbar-toggler-icon"></span>
                     </button>
