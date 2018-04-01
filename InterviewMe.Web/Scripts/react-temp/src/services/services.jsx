@@ -5,3 +5,13 @@ export function getAll(){
 
     return axios.get(url);
 }
+
+export function speech() {
+    return axios({
+        method: 'post',
+        url: '',
+        headers: {
+
+        }
+    })
+}

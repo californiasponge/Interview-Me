@@ -6,6 +6,7 @@ class AudioQuiz extends Component {
 
     render() {
         return (
+            <React.Fragment>
             <div className='btnContainer'>
                 <h3>{this.topic}</h3>
                 <ProgressBar />
@@ -18,6 +19,7 @@ class AudioQuiz extends Component {
                 <button> Skip >> </button>
                 <button> Sumbit </button>
             </div>
+            </React.Fragment>
         )
     }
 }
