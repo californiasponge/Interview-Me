@@ -1,11 +1,35 @@
-.actions {
-  width: 200px;
-  height: 100px;
-  margin: auto;
-}
-
 .quiz {
+  .actions {
+    width: 200px;
+    height: 100px;
+    margin: auto;
+  }
+  .card-title {
+    margin: 15px auto;
+    text-align: center;
+  }
+  .headings {
+    text-align: center;
+  }
+  .section-light {
+    background-color: #fff;
+  }
+  .section-dark {
+    background-color: #3AAFA9;
+  }
+  .section {
+    text-align: center;
+    padding: 50px;
+    width: fill;
+  }
+  .section .card{
+  margin-top: 30px;
+  }
+
+
   .card {
+    box-shadow: 0 0.3125rem 1rem 0 rgba(0, 0, 0, 0.24);
+
     &::before,
     &::after {
       position: absolute;
@@ -48,7 +72,7 @@
 
 @media (max-width:768px) {
   .section-light .card {
-    overflow: hidden; 
+    overflow: hidden;
     text-overflow: ellipsis;
     height: 300px;
   }
