@@ -1,16 +1,4 @@
 .home {
-    .bg1 {
-        position: relative;
-        opacity: 0.70;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
-    .bg1 {
-        background-image: url("../img/bg1.jpg");
-        min-height: 700px;
-    }
     .landing {
         /* margin-top: -75px; */
         display: grid;
@@ -34,32 +22,19 @@
         height: auto;
         width: 95vw;
     }
-    .card-title {
-        margin: 15px auto;
-        text-align: center;
-    }
-    .headings {
-        text-align: center;
-    }
     /* parallax */
     .section {
         text-align: center;
-        padding: 70px;
+        padding: 80px;
         width: fill;
-    }
-    .card {
-        margin: 20px;
-        box-shadow: 0 0.3125rem 1rem 0 rgba(0, 0, 0, 0.24);
-        height: 250px;
-        width: auto;
-    }
-    .sectionName {
-        color: #fff;
+        color: #000;
     }
     .section-light {
-        background-color: #88BDBC;
-    }
-    .section-dark {
         background-color: #fff;
     }
+    .section-dark {
+        background-color: #88BDBC;
+    }
+
+    
 }

@@ -23,32 +23,32 @@ class Quiz extends Component {
                 <section className="section section-dark">
                     <h2 className='sectiontitle'>Lets Get It!</h2>
                     <div className='row'>                   
-                        <div class="actions card col-xs-2">
-                            <div class="card-body">
+                        <div className="actions card col-xs-2">
+                            <div className="card-body">
                                 <div className='icons'>
                                     <Ionicon icon="ios-add-circle-outline" fontSize="35px" color="rgb(52, 128, 124)" />
                                 </div>
                                 <a>Add New Questions</a>
                             </div>
                         </div>
-                        <div class="actions card col-xs-2">
-                            <div class="card-body">
+                        <div className="actions card col-xs-2">
+                            <div className="card-body">
                                 <div className='icons'>
                                     <Ionicon icon="ios-card-outline" fontSize="35px" color="rgb(52, 128, 124)" />
                                 </div>
                                 <a>Flash Cards</a>
                             </div>
                         </div>
-                        <div class="actions card col-xs-2">
-                            <div class="card-body">
+                        <div className="actions card col-xs-2">
+                            <div className="card-body">
                                 <div className='icons'>
                                     <Ionicon icon="ios-paper-outline" fontSize="35px" color="rgb(52, 128, 124)" />
                                 </div>
                                 <a>Quiz</a>
                             </div>
                         </div>
-                        <div class="actions card col-xs-2">
-                            <div class="card-body">
+                        <div className="actions card col-xs-2">
+                            <div className="card-body">
                                 <div className='icons'>
                                     <Ionicon icon="ios-microphone-outline" fontSize="35px" color="rgb(52, 128, 124)" />
                                 </div>

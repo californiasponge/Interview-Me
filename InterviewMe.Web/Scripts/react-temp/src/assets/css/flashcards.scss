@@ -1,0 +1,51 @@
+// .flashcards {
+//     label {
+//         -webkit-perspective: 1000px;
+//         perspective: 1000px;
+//         -webkit-transform-style: preserve-3d;
+//         transform-style: preserve-3d;
+//         display: block;
+//         width: 300px;
+//         height: 200px;
+//         position: absolute;
+//         left: 50%;
+//         top: 50%;
+//         -webkit-transform: translate(-50%, -50%);
+//         transform: translate(-50%, -50%);
+//         cursor: pointer;
+//         box-shadow: 0 0.3125rem 1rem 0 rgba(0, 0, 0, 0.24);
+//     }
+//     .card {
+//         position: relative;
+//         height: 100%;
+//         width: 100%;
+//         -webkit-transform-style: preserve-3d;
+//         transform-style: preserve-3d;
+//         -webkit-transition: all 600ms;
+//         transition: all 600ms;
+//         z-index: 20;
+//     }
+//     .card div {
+//         position: absolute;
+//         height: 100%;
+//         width: 100%;
+//         background: #FFF;
+//         text-align: center;
+//         line-height: 200px;
+//         -webkit-backface-visibility: hidden;
+//         backface-visibility: hidden;
+//         border-radius: 2px;
+//     }
+//     .card .back {
+//         background: #fff;       
+//         -webkit-transform: rotateX(180deg);
+//         transform: rotateX(180deg);
+//     }
+//     input {
+//         display: none;
+//     }
+//     :checked+.card {
+//         transform: rotateX(180deg);
+//         -webkit-transform: rotateX(180deg);
+//     }
+// }

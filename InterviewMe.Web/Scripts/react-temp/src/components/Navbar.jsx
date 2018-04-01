@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../assets/css/main.css';
 import '../assets/css/navbar.css';
 import Logo from '../assets/img/InterviewMe-Logo.png';
-import Ionicon from 'react-ionicons';
+
 
 class Navi extends Component {
 
