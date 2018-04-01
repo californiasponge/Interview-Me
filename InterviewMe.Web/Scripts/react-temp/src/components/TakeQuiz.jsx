@@ -71,9 +71,9 @@ class TakeQuiz extends Component {
 
                 }
                 let finalScore = this.results.length / correct;
-                console.log(finalScore);
+
                 this.setState({
-                    viewCard: finalScore
+                    viewCard: null
                 });
             };
         }, 200)
