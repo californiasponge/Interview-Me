@@ -31,8 +31,6 @@ class TakeQuiz extends Component {
             items[i] = items[j];
             items[j] = temp;
         }
-
-
     }
 
     showCards = (questions) => {
@@ -40,29 +38,37 @@ class TakeQuiz extends Component {
             this.shuffle(questions[i].answers);
         }
         this.shuffle(questions);
-        this.setState({ viewCard: questions });
+        this.questionDeck = questions;
+        const firstQuestion = this.questionDeck.shift();
+        this.setState({ viewCard: firstQuestion });
     }
     handleAnswer = (question, answer) => {
-        console.log(question);
-        console.log(answer);
         let id = question.id;
         const response = {
             userId: 1,
             questionId: question.id
         }
-        if (question.answer == answer) {
+        if (question.answer === answer) {
             response.isCorrect = true;
         } else {
             response.isCorrect = false;
         }
-        this.state.viewCard.shift();
         this.results.push(response);
-        console.log(this.results);
-        console.log(this.state.viewCard);
+        if (this.questionDeck.length != 0) {
+            const nextQuestion = this.questionDeck.shift();
+            this.setState({
+                viewCard: nextQuestion
+            });
+        } else {
+            this.setState({
+                viewCard: null
+            });
+
+        }
     }
     answeredQuestion = (answer) => {
         let el = document.querySelector('#transition-card');
-        TweenMax.to(el, .5, { x: window.innerWidth });
+        TweenMax.to(el, .5, { x: -window.innerWidth });
         setTimeout(() => { this.bringNewCard(); }, 2000);
     }
     bringNewCard = () => {
@@ -77,30 +83,24 @@ class TakeQuiz extends Component {
                 <div className='container'>
                     <div className='quiz-card shadow-the-back-sm' id='transition-card'>
                         {
-                            this.state.viewCard && this.state.viewCard.map((question, index) =>
+                            this.state.viewCard &&
+                            <div>
                                 <div className='row'>
-                                    <div key={question.id}>
-                                        <div className='row'>
-                                            <div className='col-lg-12 quiz-question'>
-                                                <h3>Question: {question.question}
-                                                </h3>
-                                            </div>
-                                        </div>
-                                        {
-                                            question.answers.map((answer, index) =>
-                                                <div className='row'>
-                                                    <div className='col-lg-12 quiz-answers'>
-                                                        <li key={index}><a onClick={() => this.handleAnswer(question, answer)}><i>{answer}</i></a></li>
-                                                    </div>
-                                                    <button onClick={() => this.answeredQuestion('first')}>
-                                                        Done
-                                                        </button>
-                                                </div>
-                                            )
-                                        }
+                                    <div className='col-lg-12 quiz-question'>
+                                        <h3 className='tq-question'>{this.state.viewCard.question}
+                                        </h3>
                                     </div>
                                 </div>
-                            )
+                                <div className='row'>
+                                    {
+                                        this.state.viewCard.answers.map((answer, index) =>
+                                            <div className='col-lg-12 quiz-answers' key={index}>
+                                                <h2 onClick={() => this.handleAnswer(this.state.viewCard, answer)} className='tq-answer'>{answer}</h2>
+                                            </div>
+                                        )
+                                    }
+                                </div>
+                            </div>
                         }
                     </div>
                 </div>
