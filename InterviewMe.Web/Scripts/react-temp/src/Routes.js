@@ -8,6 +8,7 @@ import MeetUps from './components/MeetUps';
 import Contact from './components/Contact';
 import Login from './components/Login';
 import 'bootstrap/dist/css/bootstrap.css';
+import FlashCards from './components/FlashCards';
 
 class Routes extends Component {
     render() {
@@ -21,6 +22,8 @@ class Routes extends Component {
                     <Route path='/meetups' component={MeetUps} />
                     <Route path='/contact' component={Contact} />
                     <Route path='/login' component={Login} />
+                    <Route path='/flashcards' component={FlashCards} />
+
                     <Route path='/c' component={TakeQuiz} />
                     <Route path='/angular.js' component={TakeQuiz} />
                     <Route path='/asp.net' component={TakeQuiz} />

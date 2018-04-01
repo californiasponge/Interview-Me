@@ -21,7 +21,7 @@ class Home extends Component {
                     </div>
                 </div>
 
-                <section className="section section-light">
+                <section className="section section-dark">
                     <h2>Schedule MeetUps</h2>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, laudantium,
@@ -29,20 +29,23 @@ class Home extends Component {
                     </p>
                 </section>
             
-                <section className="section">
-                    <div className='bg1 row'>
-                        <h2 className='sectionName'>Interview Me</h2>
-                        <div className="card mb-3">                
-                            <div className="card-body">
-                                <h5 className="card-title">Study Sets</h5>
-                                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                                </p>
-                            </div>
-                                                                                   
-                        </div>
-                    </div>
-                </section>
+                <section className="section section-light">
+                    <h2>Interview Us</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, laudantium,
+                        quibusdam? Nobis, delectus, commodi, fugit amet tempora facere dolores nisi
+                    </p>
+                </section>                            
                
+                <section className="section section-dark">
+                    <h2>Interview Us</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, laudantium,
+                        quibusdam? Nobis, delectus, commodi, fugit amet tempora facere dolores nisi
+                    </p>
+                </section>
+
+
             </div >
         )
     }
