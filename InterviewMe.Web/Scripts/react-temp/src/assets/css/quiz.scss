@@ -1,11 +1,11 @@
-.actions{
-    width: 200px;
-    height: 100px;
-    margin: auto;
-  }
+.actions {
+  width: 200px;
+  height: 100px;
+  margin: auto;
+}
 
-.quiz .card{
-
+.quiz {
+  .card {
     &::before,
     &::after {
       position: absolute;
@@ -18,22 +18,20 @@
       opacity: 0;
       pointer-events: none;
     }
-  
     &::before {
-      transform: scale3d(0, 1, 1);
+      transform: scale3d(0, 1, 1, 1);
       transform-origin: left top;
       border-top: 1px solid #acacac;
       border-bottom: 1px solid #acacac;
     }
-  
     &::after {
-      transform: scale3d(1, 0, 1);
+      transform: scale3d(1, 0, 1, 1);
       transform-origin: right top;
-      border-right: 1px solid #4257b2;
-      border-left: 1px solid #4257b2;
-      border-top: 1px solid #4257b2;
+      border-right: 1px solid #3AAFA9;
+      border-left: 1px solid #3AAFA9;
+      border-top: 1px solid #3AAFA9;
+      border-bottom: 1px solid #acacac;
     }
-  
     &:hover,
     &:focus {
       &::before,
@@ -43,3 +41,15 @@
       }
     }
   }
+  .section-light .card {
+    width: auto;
+  }
+}
+
+@media (max-width:768px) {
+  .section-light .card {
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    height: 300px;
+  }
+}

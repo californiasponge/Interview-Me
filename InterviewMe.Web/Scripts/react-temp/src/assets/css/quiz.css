@@ -15,18 +15,28 @@
   pointer-events: none; }
 
 .quiz .card::before {
-  transform: scale3d(0, 1, 1);
+  transform: scale3d(0, 1, 1, 1);
   transform-origin: left top;
   border-top: 1px solid #acacac;
   border-bottom: 1px solid #acacac; }
 
 .quiz .card::after {
-  transform: scale3d(1, 0, 1);
+  transform: scale3d(1, 0, 1, 1);
   transform-origin: right top;
-  border-right: 1px solid #4257b2;
-  border-left: 1px solid #4257b2;
-  border-top: 1px solid #4257b2; }
+  border-right: 1px solid #3AAFA9;
+  border-left: 1px solid #3AAFA9;
+  border-top: 1px solid #3AAFA9;
+  border-bottom: 1px solid #acacac; }
 
 .quiz .card:hover::before, .quiz .card:hover::after, .quiz .card:focus::before, .quiz .card:focus::after {
   transform: scale3d(1, 1, 1);
   opacity: 3; }
+
+.quiz .section-light .card {
+  width: auto; }
+
+@media (max-width: 768px) {
+  .section-light .card {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 300px; } }

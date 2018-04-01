@@ -1,36 +1,25 @@
-a {
-    text-decoration: none;
+.navbar {
+    min-height: 20px;
 }
 
-a:link,
-a:focus,
-a:visited,
-a:active {
-    text-decoration: none;
-}
-
-.custom-nav a,
-.log-out {
-    display: inline-block;
-    font-weight: 700;
-    font-size: 24px;
-    margin-top: 50px;
-    letter-spacing: -1px;
-    justify-content: center;
+.navbarNav {
+    font-size: 20px;
 }
 
 .logo {
-    width: 150px;
-    height: 150px;
+    height: 100px;
+    width: 100px;
 }
 
-.custom-nav a div:hover {
+.navlinks:visited,
+.navlinks:active,
+.navlinks:link,
+.navlinks:focus {
+    color: #9d9d9d;
+    text-decoration: none;
+    margin-left: 5px;  
+}
+
+.navlinks:hover {
     color: #3AAFA9;
-    transition: color .2s;
 }
-
-.activeTab div {
-    color: #3AAFA9;
-    transition: color .2s;
-}
-
