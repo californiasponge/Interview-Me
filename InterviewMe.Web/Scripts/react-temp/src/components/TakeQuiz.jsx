@@ -32,7 +32,9 @@ class TakeQuiz extends Component {
 
         return (
             <div>
-                <h5>Hello</h5>
+                <div className='quiz-card'>
+                    <h5>Hello</h5>
+                </div>
             </div>
         )
     }
