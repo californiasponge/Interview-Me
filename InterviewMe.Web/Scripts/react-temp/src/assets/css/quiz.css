@@ -1,3 +1,11 @@
+.card-title{
+  font-weight: 700;
+  font-size: 3em;
+}
+.sectiontitle {
+  font-weight: 700;
+  font-size: 4em;
+}
 .quiz .actions {
   width: 200px;
   height: 100px;
@@ -25,6 +33,7 @@
   margin-top: 30px; }
 
 .quiz .card {
+  cursor: pointer;
   box-shadow: 0 0.3125rem 1rem 0 rgba(0, 0, 0, 0.24); }
   .quiz .card::before, .quiz .card::after {
     position: absolute;
