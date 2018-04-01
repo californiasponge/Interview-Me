@@ -9,7 +9,7 @@ class AudioQuiz extends Component {
             <React.Fragment>
             <div className='btnContainer'>
                 <h3>{this.topic}</h3>
-                <ProgressBar />
+                {/* <ProgressBar /> */}
             </div>
 
             <div className='btnContainer'>
