@@ -7,41 +7,42 @@ import ReadyVideo from '../assets/video/Interview-Me.mp4'
 class Home extends Component {
     render() {
         return (
-            <div className='row'>
-                <div className='landing'>
-                    <div className='ready'>
-                        <img src={Ready} alt='' />
-                    </div>
-                    <div className='ready-video'>
-                        <video className='active-video' autoPlay loop muted>
-                            <source src={ReadyVideo} type='video/mp4' />
-                        </video>
-                    </div>
-                </div>
-                <div className="match-stats card">
-                    <h4 className="card-title">Leaderboard</h4>
-                    <div className="card-body">
-                        <div className="table-responsive">
-                            <table className="table table-striped">
-                                <thead>
-                                    <tr className='headings'>
-                                        <th>#</th>
-                                        <th>Username</th>
-                                        <th>Total Score</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr className='rankings' role="row">
-                                        <td></td>
-                                        <td>SomeGuy</td>
-                                        <td>100</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+            <div className='home'>
+                <div className='row'>
+                    <div className='landing'>
+                        <div className='ready'>
+                            <img src={Ready} alt='' />
+                        </div>
+                        <div className='ready-video'>
+                            <video className='active-video' autoPlay loop muted>
+                                <source src={ReadyVideo} type='video/mp4' />
+                            </video>
                         </div>
                     </div>
                 </div>
 
+                <section className="section section-light">
+                    <h2>Schedule MeetUps</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, laudantium,
+                        quibusdam? Nobis, delectus, commodi, fugit amet tempora facere dolores nisi
+                    </p>
+                </section>
+            
+                <section className="section">
+                    <div className='bg1 row'>
+                        <h2 className='sectionName'>Interview Me</h2>
+                        <div className="card mb-3">                
+                            <div className="card-body">
+                                <h5 className="card-title">Study Sets</h5>
+                                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                                </p>
+                            </div>
+                                                                                   
+                        </div>
+                    </div>
+                </section>
+               
             </div >
         )
     }
