@@ -48,10 +48,12 @@
   <ItemGroup>
     <Compile Include="Domain\UploadCompletedModel.cs" />
     <Compile Include="Domain\Audio.cs" />
+    <Compile Include="Domain\Questions.cs" />
     <Compile Include="Domain\Quiz.cs" />
     <Compile Include="Requests\AudioRequest.cs" />
     <Compile Include="Requests\AudioUpdateRequest.cs" />
     <Compile Include="Requests\QuestionRequest.cs" />
+    <Compile Include="Requests\QuestionsUpdateRequest.cs" />
     <Compile Include="Requests\QuizRequest.cs" />
     <Compile Include="Domain\User.cs" />
     <Compile Include="Domain\UserBase.cs" />

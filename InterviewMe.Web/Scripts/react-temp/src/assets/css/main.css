@@ -4,6 +4,9 @@
     font-family: 'Work Sans', sans-serif;
     color:#17252A;
 }
+a {
+    text-decoration: none !important;
+}
 .shadow-the-back {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
 }

@@ -12,84 +12,85 @@ using System.Web.Http;
 namespace InterviewMe.Web.Controllers
 {
     [AllowAnonymous]
-    public class QuizzesController : ApiController
+    public class QuestionsController : ApiController
     {
-        readonly IQuizzesService qService; 
+        readonly IQuestionsService questionsService;
 
-        public QuizzesController(IQuizzesService qService)
+        public QuestionsController(IQuestionsService questionsService)
         {
-            this.qService = qService;
+            this.questionsService = questionsService;
         }
 
-        [HttpGet, Route("api/quizzes")]
+        [HttpGet, Route("api/questions")]
         public HttpResponseMessage GetAll()
         {
-            List<Quiz> quizzes = qService.GetAll();
+            List<Questions> questions = questionsService.GetAll();
 
-            ItemsResponse<Quiz> response = new ItemsResponse<Quiz>();
-            response.Items = quizzes;
+            ItemsResponse<Questions> response = new ItemsResponse<Questions>();
+            response.Items = questions;
 
             return Request.CreateResponse(HttpStatusCode.OK, response);
         }
 
-        [HttpGet, Route("api/quizzes/{id}")]
+        [HttpGet, Route("api/questions/{id}")]
         public HttpResponseMessage GetById(int id)
         {
-            Quiz quiz = qService.GetById(id);
+            Questions question = questionsService.GetById(id);
 
-            ItemResponse<Quiz> response = new ItemResponse<Quiz>();
-            response.Item = quiz;
+            ItemResponse<Questions> response = new ItemResponse<Questions>();
+            response.Item = question;
 
             return Request.CreateResponse(HttpStatusCode.OK, response);
         }
-        [HttpGet, Route("api/{subject}/quizzes/")]
+        [HttpGet, Route("api/questions/{subject}")]
         public HttpResponseMessage GetBySubject(string subject)
         {
-            List<Quiz> quizzes = qService.GetBySubject(subject);
+            List<Questions> questions = questionsService.GetBySubject(subject);
 
-            ItemsResponse<Quiz> response = new ItemsResponse<Quiz>();
-            response.Items = quizzes;
+            ItemsResponse<Questions> response = new ItemsResponse<Questions>();
+            response.Items = questions;
 
             return Request.CreateResponse(HttpStatusCode.OK, response);
         }
 
-        [HttpPost, Route("api/quizzes")]
-        public HttpResponseMessage Create(QuizRequest req)
+        [HttpPost, Route("api/questions")]
+        public HttpResponseMessage Create(QuestionRequest req)
         {
             if (!ModelState.IsValid)
             {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
             }
 
-            int id = qService.Create(req);
+            int id = questionsService.Create(req);
             ItemResponse<int> response = new ItemResponse<int>();
 
             response.Item = id;
             return Request.CreateResponse(HttpStatusCode.Created, response);
         }
 
-        [HttpPut, Route("api/quizzes/{id}")]
-        public HttpResponseMessage Update(QuizUpdateRequest req)
+        [HttpPut, Route("api/questions/{id}")]
+        public HttpResponseMessage Update(QuestionsUpdateRequest req)
         {
             if (!ModelState.IsValid)
             {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
             }
-            qService.Update(req);
+            questionsService.Update(req);
             SuccessResponse response = new SuccessResponse();
             return Request.CreateResponse(HttpStatusCode.OK, response);
         }
-        [HttpDelete, Route("api/quizzes/{id}")]
+        [HttpDelete, Route("api/questions/{id}")]
         public HttpResponseMessage Delete(int id)
         {
             if (!ModelState.IsValid)
             {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
             }
-            qService.Delete(id);
+            questionsService.Delete(id);
             SuccessResponse response = new SuccessResponse();
             return Request.CreateResponse(HttpStatusCode.OK, response);
         }
+
 
     }
 }

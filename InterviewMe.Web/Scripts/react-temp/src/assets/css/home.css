@@ -1,15 +1,5 @@
 .home {
   /* parallax */ }
-  .home .bg1 {
-    position: relative;
-    opacity: 0.70;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed; }
-  .home .bg1 {
-    background-image: url("../img/bg1.jpg");
-    min-height: 700px; }
   .home .landing {
     /* margin-top: -75px; */
     display: grid;
@@ -28,23 +18,12 @@
   .home .active-video {
     height: auto;
     width: 95vw; }
-  .home .card-title {
-    margin: 15px auto;
-    text-align: center; }
-  .home .headings {
-    text-align: center; }
   .home .section {
     text-align: center;
-    padding: 70px;
-    width: fill; }
-  .home .card {
-    margin: 20px;
-    box-shadow: 0 0.3125rem 1rem 0 rgba(0, 0, 0, 0.24);
-    height: 250px;
-    width: auto; }
-  .home .sectionName {
-    color: #fff; }
+    padding: 80px;
+    width: fill;
+    color: #000; }
   .home .section-light {
-    background-color: #88BDBC; }
-  .home .section-dark {
     background-color: #fff; }
+  .home .section-dark {
+    background-color: #88BDBC; }
