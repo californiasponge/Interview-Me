@@ -79,6 +79,7 @@
     <Compile Include="Interfaces\ICacheService.cs" />
     <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="Interfaces\IUsersService.cs" />
+    <Compile Include="IQuestionsService.cs" />
     <Compile Include="IQuizzesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestionsService.cs" />

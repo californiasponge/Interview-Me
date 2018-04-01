@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace InterviewMe.Services
 {
-    public class QuestionsService
+    public class QuestionsService : IQuestionsService
     {
         readonly IDataProvider dataProvider; 
 
