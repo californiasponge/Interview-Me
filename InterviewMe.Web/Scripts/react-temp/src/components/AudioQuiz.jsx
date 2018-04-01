@@ -7,29 +7,47 @@ class AudioQuiz extends Component {
     render() {
         return (
             <React.Fragment>
-            <div className='btnContainer'>
-                <h3>{this.topic}</h3>
-                {/* <ProgressBar /> */}
-            </div>
+                <div className='btnContainer'>
+                    <h3>{this.topic}</h3>
+                    {/* <ProgressBar /> */}
+                </div>
 
-            <section className="section">
+                <section className="section">
                     <div className='bg1 row'>
-                        <h2 className='sectionName'>Interview Me</h2>
+                        <h2 className='questionServed'>{this.question}</h2>
                         <div className="card mb-3">                
                             <div className="card-body">
-                                <h5 className="card-title">Study Sets</h5>
-                                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                                </p>
+                                <button 
+                                type="button" 
+                                disabled
+                                className="btn-text"
+                                onClick={this.toggleRec}> Start</button>
+                                <button 
+                                type="button"
+                                disabled
+                                className="btn-text"
+                                onClick={this.toggleRec}> Stop</button>
+                                <span 
+                                content-editable 
+                                style={{width:'200px', height: '200px', display:"block"}}> {} </span>
+                                
                             </div>
-                                                                                   
                         </div>
                     </div>
                 </section>
 
-            <div className='btnContainer'>
-                <button> Skip >> </button>
-                <button> Sumbit </button>
-            </div>
+                <div className='btnContainer'>
+                    <button
+                    type="button"
+                    style={{display: 'none'}}
+                    className="card-text"
+                    onClick={this.skipQuestion}> Skip >> </button>
+                    <button
+                    type="button"
+                    style={{display: 'none'}}
+                    className="card-text"
+                    onClick={this.nextQuestion}> Sumbit </button>
+                </div>
             </React.Fragment>
         )
     }
