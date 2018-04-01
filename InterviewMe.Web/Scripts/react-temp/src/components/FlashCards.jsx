@@ -8,7 +8,7 @@ class FlashCards extends Component {
         questions: []
     }
 
-    componentDidMount () {
+    componentWillMount () {
         fcservices
         .getAll().then(
             response =>{
@@ -25,26 +25,24 @@ class FlashCards extends Component {
         return (
             <div className='flashcards'>
                                 
-                {this.state.questions.map((items) =>
-
+                {this.state.questions.map((items, index) =>
                     <div key={items.id}>
                     {
-                        (items.subject == 'ASP.NET') &&  
+                    (items.id == 46) &&  
                     <div className='row'>                   
-                    <label>                            
-                        <input type="checkbox"/>
                         <div className="card">
-                            <div className="front">
-                                <h3>Question: </h3>
-                                <p>{items.question}</p>
-                            </div>
+                            <div className="content">
+                                <div className="front">
+                                    {/* <p>Questions: </p> */}
+                                    <p>{items.question}</p>
+                                </div>
 
-                            <div className="back">
-                                <h3>Answer: </h3>
-                                <p>{items.answer}</p>
+                                <div className="back">
+                                    {/* <p>Answer: </p> */}
+                                    {items.answer}
+                                </div>
                             </div>
-                        </div>                            
-                    </label> 
+                        </div>
                     </div>                      
                     }
                     </div>
