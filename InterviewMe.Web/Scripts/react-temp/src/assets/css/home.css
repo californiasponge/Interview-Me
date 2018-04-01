@@ -1,73 +1,40 @@
-.landing {
+.home {
+  /* parallax */ }
+  .home .landing {
     /* margin-top: -75px; */
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas: 
-    'ready';
-}
-.ready {
+    grid-template-areas: 'ready'; }
+  .home .ready {
     grid-area: ready;
-    justify-content: center;
-}
-.ready img {
+    justify-content: center; }
+  .home .ready img {
     flex-shrink: 0;
-    height: 100vh;
-    width: 100vw;
-}
-
-.ready-video{
+    height: auto;
+    width: 95vw; }
+  .home .ready-video {
     grid-area: ready;
-    z-index: -1; 
-}  
-
-.active-video {
-    height: 100vh;
-    width: 100vw;
-}
-
-.match-stats {
-    width: 400px;
-    margin: 40px auto;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16);	 
-}
-
-.card-title{
+    z-index: -1; }
+  .home .active-video {
+    height: auto;
+    width: 95vw; }
+  .home .card-title {
     margin: 15px auto;
+    text-align: center; }
+  .home .headings {
+    text-align: center; }
+  .home .section {
     text-align: center;
-}
-
-.headings{
-    text-align: center;
-}
-
-.rankings{
-    text-align: center;
-}
-
-/* parallax */
-.section {
-  text-align: center;
-  padding: 70px;
-  width: fill;
-}
-
-.card{
-    margin: 40px;
-    box-shadow: 0 0.3125rem 1rem 0 rgba(0,0,0,0.24);
+    padding: 70px;
+    width: fill; }
+  .home .card {
+    margin: 20px;
+    box-shadow: 0 0.3125rem 1rem 0 rgba(0, 0, 0, 0.24);
     height: 250px;
-}
-
-.sectionName{
-    margin: -15px;
-}
-
-.section-light {
-  background-color: #fff;
-}
-
-.section-dark {
-  background-color: #f0f0f0;
-}
-
-
-
+    width: auto; }
+  .home .sectionName {
+    margin: -15px; }
+  .home .section-light {
+    background-color: #88BDBC; }
+  .home .section-dark {
+    background-color: #fff; }
