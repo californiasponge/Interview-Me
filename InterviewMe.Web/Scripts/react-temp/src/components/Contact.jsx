@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../assets/css/main.css';
 import '../assets/css/contact.css';
-import Logo from '../assets/img/InterviewMe-Logo.png';
 
 class Contact extends Component {
 
@@ -25,7 +24,7 @@ class Contact extends Component {
                     <hr />
                     <div className="row bg-light mb-4">
                         <div className="col-lg-12">
-                            <h5>ADDRESS:</h5>
+                            <h5>ADDRESS</h5>
                         </div>
                         <div className="col-lg-4 col-4">
                             <h6>LA Hacks @ UCLA, Los Angeles, CA</h6>
