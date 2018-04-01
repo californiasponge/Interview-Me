@@ -1,5 +1,15 @@
 .home {
   /* parallax */ }
+  .home .bg1 {
+    position: relative;
+    opacity: 0.70;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; }
+  .home .bg1 {
+    background-image: url("../img/bg1.jpg");
+    min-height: 700px; }
   .home .landing {
     /* margin-top: -75px; */
     display: grid;
@@ -33,7 +43,7 @@
     height: 250px;
     width: auto; }
   .home .sectionName {
-    margin: -15px; }
+    color: #fff; }
   .home .section-light {
     background-color: #88BDBC; }
   .home .section-dark {
