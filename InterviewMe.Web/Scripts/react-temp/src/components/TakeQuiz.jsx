@@ -30,8 +30,6 @@ class TakeQuiz extends Component {
             items[i] = items[j];
             items[j] = temp;
         }
-
-
     }
 
     showCards = (questions) => {
@@ -39,56 +37,52 @@ class TakeQuiz extends Component {
             this.shuffle(questions[i].answers);
         }
         this.shuffle(questions);
-        this.setState({ viewCard: questions });
-
-        //let question = [Math.floor(Math.random() * questions.length)];
-        // console.log(question);
-        // let answers = [Math.floor(Math.random() * question.answers.length)]
-        // console.log(answers);
-
+        this.questionDeck = questions; 
+        const firstQuestion = this.questionDeck.shift();
+        this.setState({ viewCard: firstQuestion });
     }
     handleAnswer = (question, answer) => {
-        console.log(question);
-        console.log(answer);
         let id = question.id;
         const response = {
             userId: 1,
             questionId: question.id
         }
-        if(question.answer == answer){
+        if(question.answer === answer){
             response.isCorrect = true;
         } else {
             response.isCorrect = false;
         }
-        this.state.viewCard.shift();
         this.results.push(response);
-        console.log(this.results);
-        console.log(this.state.viewCard);
+        console.log(this.questionDeck.length);
+        if(this.questionDeck.length != 0){
+            const nextQuestion = this.questionDeck.shift();
+            this.setState({
+                viewCard: nextQuestion
+            });
+        } else {
+            this.setState({
+                viewCard: null
+            });
 
-
-        
-        
-        
+        }
     }
-
     render() {
 
         return (
             <div>
                 {
-                    this.state.viewCard && this.state.viewCard.map((question, index) => 
-                        <div key={question.id}>
-                            <h3>Question: {question.question}
-                            </h3>
+                    this.state.viewCard && 
+                    <div>
+                        <h3>{this.state.viewCard.question}</h3>
+                        <div>
                             {
-                                question.answers.map((answer, index) =>
-                                
-                                    <li key={index}><a onClick= {() => this.handleAnswer(question, answer)}><i>{answer}</i></a></li>
-                            )
+                                this.state.viewCard.answers.map((answer, index) => (
+                                    <h2 onClick={() => this.handleAnswer(this.state.viewCard, answer)} key={index}>{answer}</h2>
+                                ))
                             }
-                            
-                        </div> 
-                    )
+
+                        </div>
+                    </div>
                     
                 }
 
