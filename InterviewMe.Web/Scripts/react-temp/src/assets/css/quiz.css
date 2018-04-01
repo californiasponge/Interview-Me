@@ -1,36 +1,56 @@
-.actions {
+.quiz .actions {
   width: 200px;
   height: 100px;
   margin: auto; }
 
-.quiz .card::before, .quiz .card::after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transition: opacity .38s ease-in-out, transform .35s ease-in-out;
-  content: '';
-  opacity: 0;
-  pointer-events: none; }
+.quiz .card-title {
+  margin: 15px auto;
+  text-align: center; }
 
-.quiz .card::before {
-  transform: scale3d(0, 1, 1, 1);
-  transform-origin: left top;
-  border-top: 1px solid #acacac;
-  border-bottom: 1px solid #acacac; }
+.quiz .headings {
+  text-align: center; }
 
-.quiz .card::after {
-  transform: scale3d(1, 0, 1, 1);
-  transform-origin: right top;
-  border-right: 1px solid #3AAFA9;
-  border-left: 1px solid #3AAFA9;
-  border-top: 1px solid #3AAFA9;
-  border-bottom: 1px solid #acacac; }
+.quiz .section-light {
+  background-color: #fff; }
 
-.quiz .card:hover::before, .quiz .card:hover::after, .quiz .card:focus::before, .quiz .card:focus::after {
-  transform: scale3d(1, 1, 1);
-  opacity: 3; }
+.quiz .section-dark {
+  background-color: #3AAFA9; }
+
+.quiz .section {
+  text-align: center;
+  padding: 50px;
+  width: fill; }
+
+.quiz .section .card {
+  margin-top: 30px; }
+
+.quiz .card {
+  box-shadow: 0 0.3125rem 1rem 0 rgba(0, 0, 0, 0.24); }
+  .quiz .card::before, .quiz .card::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity .38s ease-in-out, transform .35s ease-in-out;
+    content: '';
+    opacity: 0;
+    pointer-events: none; }
+  .quiz .card::before {
+    transform: scale3d(0, 1, 1, 1);
+    transform-origin: left top;
+    border-top: 1px solid #acacac;
+    border-bottom: 1px solid #acacac; }
+  .quiz .card::after {
+    transform: scale3d(1, 0, 1, 1);
+    transform-origin: right top;
+    border-right: 1px solid #3AAFA9;
+    border-left: 1px solid #3AAFA9;
+    border-top: 1px solid #3AAFA9;
+    border-bottom: 1px solid #acacac; }
+  .quiz .card:hover::before, .quiz .card:hover::after, .quiz .card:focus::before, .quiz .card:focus::after {
+    transform: scale3d(1, 1, 1);
+    opacity: 3; }
 
 .quiz .section-light .card {
   width: auto; }
