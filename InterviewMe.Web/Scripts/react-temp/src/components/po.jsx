@@ -55,7 +55,9 @@ class Po extends Component {
                             <div className="card-exceprt">
                                 <Ionicon icon="ios-mail-outline" fontSize="35px" color="#C9C9C9"/>
                                 <p>
+                                <span className='email'>
                                     andrewkyukim89@gmail.com
+                                </span>
                                 </p>
                                 <Ionicon icon="ios-call-outline" fontSize="35px" color="#C9C9C9"/>
                                 <p>
@@ -63,7 +65,9 @@ class Po extends Component {
                                 </p>
                                 <Ionicon icon="logo-linkedin" fontSize="35px" color="#C9C9C9"/>
                                 <p>
+                                <span className='linked'>
                                     linkedin.com/in/andrewkyukim
+                                </span>
                                 </p>
                             </div>
                         </div>
